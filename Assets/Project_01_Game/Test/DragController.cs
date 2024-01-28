@@ -38,7 +38,7 @@ public class DragController : MonoBehaviour
     {
         if(_isDragActive)
         {
-            if ((Input.GetMouseButtonUp(0) || (Input.touchCount == 1 && Input.GetTouch(0).phase == 0)))
+            if (touchHoldAction.phase == 0)
             {
                 Drop();
                 return;
