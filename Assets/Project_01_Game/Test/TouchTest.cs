@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-public class TouchManager : MonoBehaviour
+public class TouchTest : MonoBehaviour
 {
-    
-    [SerializeField]
-    private GameObject player;
-
     private PlayerInput playerInput;
+    private EnemyBase enemySprite;
 
     private InputAction touchPositionAction;
     private InputAction touchPressAction;
@@ -17,6 +13,7 @@ public class TouchManager : MonoBehaviour
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
+        enemySprite = GetComponent<EnemyBase>();
         touchPressAction = playerInput.actions["TouchPress"];
         touchPositionAction = playerInput.actions["TouchPosition"];
     }
@@ -32,19 +29,16 @@ public class TouchManager : MonoBehaviour
     }
     private void TouchPressed(InputAction.CallbackContext context)
     {
-        //float value = context.ReadValue<float>();
-        //Debug.Log(value);
+        float value = context.ReadValue<float>();
+        Debug.Log(value);
         Vector3 position = Camera.main.ScreenToWorldPoint(touchPositionAction.ReadValue<Vector2>());
-        position.z = player.transform.position.z;
-        player.transform.position = position;
     }
     private void Update()
     {
-       // touchPositionAction.ReadValue<Vector2>();
-        if (touchPressAction.WasPerformedThisFrame()){
-            Vector3 position = Camera.main.ScreenToWorldPoint(touchPositionAction.ReadValue<Vector2>());
-            position.z = player.transform.position.z;
-            player.transform.position = position;
+        // touchPositionAction.ReadValue<Vector2>();
+        if (touchPressAction.WasPerformedThisFrame())
+        {
+          //  enemySprite.
         }
-    }
-}
+        }
+        }
