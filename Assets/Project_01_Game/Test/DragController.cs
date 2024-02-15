@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class DragController : MonoBehaviour
 {
-    
+    /*
     private bool _isDragActive = false;
 
     private Vector2 _screenPosition;
@@ -96,5 +96,5 @@ public class DragController : MonoBehaviour
     {
         _isDragActive = false;
     }
-    
+    */
 }

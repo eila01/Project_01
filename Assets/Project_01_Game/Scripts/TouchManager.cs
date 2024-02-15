@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class TouchManager : MonoBehaviour
 {
-    
+    /*
     [SerializeField]
     private GameObject player;
 
@@ -46,5 +46,5 @@ public class TouchManager : MonoBehaviour
             position.z = player.transform.position.z;
             player.transform.position = position;
         }
-    }
+    }*/
 }

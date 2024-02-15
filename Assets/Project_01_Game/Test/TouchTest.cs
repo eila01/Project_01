@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 public class TouchTest : MonoBehaviour
 {
+    /*
     private PlayerInput playerInput;
     private EnemyBase enemySprite;
 
@@ -40,5 +41,5 @@ public class TouchTest : MonoBehaviour
         {
           //  enemySprite.
         }
-        }
+        }*/
         }
