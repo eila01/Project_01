@@ -7,7 +7,7 @@ public class SlimeDice : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI slimepowerText;
     [SerializeField] public TextMeshProUGUI slimeHealthText;
-    public int slimePower;
+    private int slimePower;
     public int slimeHealth = 3;
 
 
@@ -40,14 +40,18 @@ public class SlimeDice : MonoBehaviour
     {
 
 
-        if (Input.GetMouseButtonDown(0))
+      /*  if (Input.GetMouseButtonDown(0))
         {
             StartCoroutine("RollPowerDice");
             slimepowerText.text = "Power: " + slimePower;
-        }
+        }*/
     }
-
-    private IEnumerator RollPowerDice()
+    public void SlimeRollDice()
+    {
+        StartCoroutine("RollPowerDice");
+        slimepowerText.text = "Power: " + slimePower;
+    }
+    public IEnumerator RollPowerDice()
     {
         // variable containing random dice side number
         int randomDiceSide = 0;

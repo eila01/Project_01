@@ -6,7 +6,7 @@ using TMPro;
 public class PowerDice : MonoBehaviour
 {
     //Text powerup;
-    private int powerNumber;
+    public int powerNumber;
     [SerializeField] public TextMeshProUGUI dicePowerText;
 
     // dice array
@@ -26,13 +26,17 @@ public class PowerDice : MonoBehaviour
     }
 
     private void Update()
-    {
+    {/*
         if (Input.GetMouseButtonDown(0))
         {
             StartCoroutine("RollPowerDice");
-        }
+        }*/
     }
 
+   public void RollPowerDices()
+    {
+        StartCoroutine("RollPowerDice");
+    }
     private IEnumerator RollPowerDice()
     {
         // variable containing random dice side number
@@ -58,7 +62,7 @@ public class PowerDice : MonoBehaviour
         finalSide = randomDiceSide + 1;
         // powerNumber = finalSide;
         dicePowerText.text = "Power: " + finalSide;
-
+        powerNumber = finalSide;
         // show final dice side
         Debug.Log(finalSide);
     }

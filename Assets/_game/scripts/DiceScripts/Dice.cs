@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using TMPro;
 public class Dice : MonoBehaviour
 {
+    private int defenseNumber;
+    [SerializeField] public TextMeshProUGUI diceDefenseText;
+
     // dice array
     private Sprite[] defenceDiceSides;
     //[SerializeField] public TextMeshProUGUI diceDefenseText;
@@ -24,12 +27,12 @@ public class Dice : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine("RollDefenceDice");
-        }
+      //if (defenseNumber <=)
     }
-
+    public void RollDefenseDice()
+    {
+        StartCoroutine("RollDefenceDice");
+    }
     private IEnumerator RollDefenceDice()
     {
         // variable containing random dice side number
@@ -53,8 +56,9 @@ public class Dice : MonoBehaviour
 
         // assign final side value
         finalSide = randomDiceSide + 1;
-       // diceDefenseText.text = "Defense: " + finalSide;
-
+        diceDefenseText.text = "Defense: " + finalSide;
+        defenseNumber = finalSide;
+        //defenseNumber - SlimeDice.slimePower;
         // show final dice side
         Debug.Log(finalSide);
     }
