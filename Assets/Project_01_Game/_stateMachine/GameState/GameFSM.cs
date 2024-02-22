@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 [RequireComponent(typeof(GameController))]
 public class GameFSM : StateMachineMB
 {
+    [SerializeField] public TextMeshProUGUI _gameStateText;
+
     private GameController _controller;
 
     // state variables here
