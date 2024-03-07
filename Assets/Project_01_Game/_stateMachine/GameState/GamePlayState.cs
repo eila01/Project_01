@@ -6,6 +6,7 @@ using TMPro;
 public enum Battlestate {START, PLAYTURN, ENEMYTURN, WON, LOST }
 public class GamePlayState : State
 {
+    /*
     public bool _playerWon;
     public bool _playerLost;
 
@@ -37,8 +38,8 @@ public class GamePlayState : State
 
     void Start()
     {
-        _state = Battlestate.START;
-        SetupBattle();
+        //_state = Battlestate.START;
+       // SetupBattle();
     }
 
     IEnumerator SetupBattle()
@@ -69,7 +70,7 @@ public class GamePlayState : State
 
     void PlayerAttack()
     {
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        //bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
         if (isDead)
         {
@@ -86,7 +87,7 @@ public class GamePlayState : State
 
     void EnemyAttack()
     {
-        playerUnit.TakeDamage(enemyUnit.damage);
+        //playerUnit.TakeDamage(enemyUnit.damage);
     }
     public void EndTurn()
     {
@@ -120,16 +121,16 @@ public class GamePlayState : State
     {
         base.Tick();
         
-        Debug.Log("Checking for Win Condition");
-        if(_playerWon == true)
-        {
+       // Debug.Log("Checking for Win Condition");
+       // if(_playerWon == true)
+       // {
 
-        }
-        Debug.Log("Checking for lose condition");
-        if(_playerLost == true)
-        {
+       // }
+       // Debug.Log("Checking for lose condition");
+        //if(_playerLost == true)
+       // {
 
-        }
+       // }
     }
-
+    */
 }

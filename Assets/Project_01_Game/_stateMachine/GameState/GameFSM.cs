@@ -18,7 +18,7 @@ public class GameFSM : StateMachineMB
         _controller = GetComponent<GameController>();
         // state instance here
         SetupState = new GameSetupState(this, _controller);
-        PlayState = new GamePlayState(this, _controller);
+       // PlayState = new GamePlayState(this, _controller);
     }
 
     private void Start()

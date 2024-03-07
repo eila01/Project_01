@@ -18,13 +18,16 @@ public class Slime : EnemyController
     // Update is called once per frame
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("keycode is pressed");
             StartCoroutine(SpriteReaction());
-        }
+        }*/
     }
-
+    public void slimeHurtReaction()
+    {
+        StartCoroutine(SpriteReaction());
+    }
     IEnumerator SpriteReaction()
     {
         //This is a coroutine

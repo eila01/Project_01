@@ -7,7 +7,7 @@ public class SlimeDice : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI slimepowerText;
     [SerializeField] public TextMeshProUGUI slimeHealthText;
-    private int slimePower;
+    public int slimePower = 0;
     public int slimeHealth = 3;
 
 
@@ -26,7 +26,7 @@ public class SlimeDice : MonoBehaviour
     // Initialization
     private void Start()
     {
-        slimeHealthText.text = "Health " + slimeHealth;
+       // slimeHealthText.text = "Health: " + slimeHealth;
 
         slimepowerText.text = "Power: " + slimePower;
         rend = GetComponent<SpriteRenderer>();
@@ -50,6 +50,7 @@ public class SlimeDice : MonoBehaviour
     {
         StartCoroutine("RollPowerDice");
         slimepowerText.text = "Power: " + slimePower;
+        
     }
     public IEnumerator RollPowerDice()
     {
@@ -57,7 +58,7 @@ public class SlimeDice : MonoBehaviour
         int randomDiceSide = 0;
 
         // final dice side that is read that the end
-        int finalSide = 0;
+       // int finalSide = 0;
 
         // loop to switch dice sides before final side appears
         for (int i = 0; i <= 20; i++)
@@ -72,11 +73,20 @@ public class SlimeDice : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
-        // assign final side value
+        /*
         finalSide = randomDiceSide + 1;
         //slimePower = finalSide;
         slimepowerText.text = "Power: " + finalSide;
         // show final dice side
         Debug.Log(finalSide);
+         */
+
+
+        // assign final side value
+        slimePower = randomDiceSide + 1;
+        //slimePower = finalSide;
+        slimepowerText.text = "Power: " + slimePower;
+        // show final dice side
+        Debug.Log(slimePower);
     }
 }

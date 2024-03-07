@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928c01269564b134cb85602052c3e7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defenseNumber: 0
   diceDefenseText: {fileID: 0}
 --- !u!212 &47136775
 SpriteRenderer:
@@ -457,6 +458,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &83758810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2540345963484216578, guid: 5a7ab81c03d3d2e4baa87690796e793e, type: 3}
+  m_PrefabInstance: {fileID: 923078449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &189431648
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928c01269564b134cb85602052c3e7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defenseNumber: 0
   diceDefenseText: {fileID: 189431650}
 --- !u!61 &282736714
 BoxCollider2D:
@@ -923,6 +930,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2540345963484216580, guid: 5a7ab81c03d3d2e4baa87690796e793e, type: 3}
   m_PrefabInstance: {fileID: 923078449}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &433333955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83758810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb102296ebef9c441a2c0eb8d0e8e802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthText: {fileID: 1568855252}
+  unitName: Slime
+  maxHP: 3
+  currentHP: 3
+  currentPower: 0
+  currentDefense: 0
+  hasDefense: 0
+--- !u!114 &433333956 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2540345963484216581, guid: 5a7ab81c03d3d2e4baa87690796e793e, type: 3}
+  m_PrefabInstance: {fileID: 923078449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83758810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b924bcd93b9b4964db5a6a370fdb5f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &455865483
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,6 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928c01269564b134cb85602052c3e7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defenseNumber: 0
   diceDefenseText: {fileID: 0}
 --- !u!212 &455865486
 SpriteRenderer:
@@ -1105,33 +1143,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1253285144}
-        m_TargetAssemblyTypeName: PowerDice, Assembly-CSharp
-        m_MethodName: RollPowerDices
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 282736713}
-        m_TargetAssemblyTypeName: Dice, Assembly-CSharp
-        m_MethodName: RollDefenseDice
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1460700310}
-        m_TargetAssemblyTypeName: SlimeDice, Assembly-CSharp
-        m_MethodName: SlimeRollDice
+      - m_Target: {fileID: 1296766416}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: OnRollDice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1615,7 +1629,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &695865310
 GameObject:
@@ -1810,7 +1824,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &833573920
 MonoBehaviour:
@@ -2337,7 +2351,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1053887630
 GameObject:
@@ -2423,13 +2437,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1136900884}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1296766416}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: EndTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2607,7 +2621,7 @@ Transform:
   - {fileID: 695865311}
   - {fileID: 1685544999}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1136900884
 GameObject:
@@ -2639,6 +2653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1f356c6246ad24585cd54f9f51de43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameStateText: {fileID: 0}
 --- !u!114 &1136900886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2664,7 +2679,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1224917013
 GameObject:
@@ -2927,6 +2942,72 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!1 &1296766414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1296766415}
+  - component: {fileID: 1296766416}
+  m_Layer: 0
+  m_Name: BattleSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1296766415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296766414}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1296766416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296766414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dba1bede736ff7645943e6262ff150e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStateText: {fileID: 1948337997}
+  playerHealthText: {fileID: 883896972}
+  winState: {fileID: 1224917015}
+  loseState: {fileID: 1368497789}
+  _hurtParticle: {fileID: 1837868588639950386, guid: fca4e672bc92b1544a7ac8949d12eabd, type: 3}
+  _winSound: {fileID: 2438564147956495718, guid: 8cee1fab484a96e44991bc681834d880, type: 3}
+  _lostSound: {fileID: 2438564147956495718, guid: 279674fa7849a7e4ca86c1346a66308d, type: 3}
+  _hurtSound: {fileID: 7079912594786155007, guid: 77dfb72d79d886244a36f762a28ad299, type: 3}
+  _dieSound: {fileID: 6132999280256652917, guid: 854eac224f1455144bf0590f9a68bee8, type: 3}
+  _hurtPoint: {fileID: 2137816513}
+  _state: 0
+  _playerWon: 0
+  _playerLost: 0
+  playerUnit: {fileID: 1361018302}
+  enemyUnit: {fileID: 433333955}
+  playerPwDice: {fileID: 1253285144}
+  playerDfDice: {fileID: 282736713}
+  slimePwDice: {fileID: 1460700310}
+  slimeHurtAnimation: {fileID: 433333956}
+  slimePowerDmg: {fileID: 1460700310}
+  defenceNum: {fileID: 282736713}
+  playerPowerDmg: {fileID: 1253285144}
 --- !u!1 &1361018301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2957,12 +3038,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb102296ebef9c441a2c0eb8d0e8e802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: 
-  damage: 0
+  HealthText: {fileID: 883896972}
+  unitName: Player
   maxHP: 5
   currentHP: 5
   currentPower: 0
   currentDefense: 0
+  hasDefense: 1
 --- !u!4 &1361018303
 Transform:
   m_ObjectHideFlags: 0
@@ -2976,7 +3058,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1361018304
 MonoBehaviour:
@@ -3157,7 +3239,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459161348
 GameObject:
@@ -3258,7 +3340,7 @@ RectTransform:
   - {fileID: 2030814638}
   - {fileID: 10946790}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3364,6 +3446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slimepowerText: {fileID: 924632215}
   slimeHealthText: {fileID: 1568855252}
+  slimePower: 0
   slimeHealth: 3
 --- !u!1 &1568855250
 GameObject:
@@ -4324,8 +4407,9 @@ Transform:
   m_Children:
   - {fileID: 433333954}
   - {fileID: 1460700307}
+  - {fileID: 2137816513}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2030814637
 GameObject:
@@ -4429,3 +4513,34 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &2137816512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2137816513}
+  m_Layer: 0
+  m_Name: hurtLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2137816513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137816512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.27, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1985166472}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

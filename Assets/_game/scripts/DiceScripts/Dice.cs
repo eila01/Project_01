@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class Dice : MonoBehaviour
 {
-    private int defenseNumber;
+    public int defenseNumber = 0;
     [SerializeField] public TextMeshProUGUI diceDefenseText;
 
     // dice array
@@ -29,7 +29,7 @@ public class Dice : MonoBehaviour
     {
       //if (defenseNumber <=)
     }
-    public void RollDefenseDice()
+    public void RollDefenseDices()
     {
         StartCoroutine("RollDefenceDice");
     }
@@ -39,7 +39,7 @@ public class Dice : MonoBehaviour
         int randomDiceSide = 0;
 
         // final dice side that is read that the end
-        int finalSide = 0;
+        //int finalSide = 0;
 
         // loop to switch dice sides before final side appears
         for (int i = 0; i <= 20; i++)
@@ -54,13 +54,18 @@ public class Dice : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
-        // assign final side value
-        finalSide = randomDiceSide + 1;
+        /*
+         finalSide = randomDiceSide + 1;
         diceDefenseText.text = "Defense: " + finalSide;
-        defenseNumber = finalSide;
+         */
+
+        // assign final side value
+        defenseNumber = randomDiceSide + 1;
+        diceDefenseText.text = "Defense: " + defenseNumber;
+        //defenseNumber = finalSide;
         //defenseNumber - SlimeDice.slimePower;
         // show final dice side
-        Debug.Log(finalSide);
+        Debug.Log(defenseNumber);
     }
 
 

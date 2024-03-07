@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class PlayerManager : MonoBehaviour
 {
-    private int playerHealth = 5;
+   // private int playerHealth = 5;
     [SerializeField] public TextMeshProUGUI playerHealthText;
     [SerializeField] public TextMeshProUGUI winState;
     [SerializeField] public TextMeshProUGUI loseState;
@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        playerHealthText.text = "Health " + playerHealth;
+        //playerHealthText.text = "Health " + playerHealth;
     }
     private void Update()
     {

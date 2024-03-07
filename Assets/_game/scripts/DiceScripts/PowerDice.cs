@@ -6,7 +6,7 @@ using TMPro;
 public class PowerDice : MonoBehaviour
 {
     //Text powerup;
-    public int powerNumber;
+    public int powerNumber = 0;
     [SerializeField] public TextMeshProUGUI dicePowerText;
 
     // dice array
@@ -43,7 +43,7 @@ public class PowerDice : MonoBehaviour
         int randomDiceSide = 0;
 
         // final dice side that is read that the end
-        int finalSide = 0;
+       // int finalSide = 0;
 
         // loop to switch dice sides before final side appears
         for (int i = 0; i <= 20; i++)
@@ -58,12 +58,18 @@ public class PowerDice : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
-        // assign final side value
-        finalSide = randomDiceSide + 1;
+        /*
+          finalSide = randomDiceSide + 1;
         // powerNumber = finalSide;
         dicePowerText.text = "Power: " + finalSide;
-        powerNumber = finalSide;
+         */
+
+        // assign final side value
+        powerNumber = randomDiceSide + 1;
+        // powerNumber = finalSide;
+        dicePowerText.text = "Power: " + powerNumber;
+       // powerNumber = finalSide;
         // show final dice side
-        Debug.Log(finalSide);
+        Debug.Log("Player PowerDice: " + powerNumber);
     }
 }
